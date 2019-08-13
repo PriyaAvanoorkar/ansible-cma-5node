@@ -43,7 +43,7 @@
     #apigee_postgresql_password: Apigee11
     apigee_cassandra_password: Apigee11
     # Path to the license file on the Ansible control host.
-    apigee_license_path: ~/ansible-cma-5node/license.txt
+    apigee_license_path: file://root/ansible-cma-5node/license.txt
     # Leave blank to disable mail.
     apigee_smtp_host:
     apigee_smtp_mail_from: noreply@apigee.com
