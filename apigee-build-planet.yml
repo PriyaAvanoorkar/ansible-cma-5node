@@ -39,11 +39,11 @@
     # apigee-edge
     apigee_admin_email: opdk@apigee.com
     apigee_admin_password: Apigee11
-    apigee_ldap_password: Apigee11
+    #apigee_ldap_password: Apigee11
     #apigee_postgresql_password: Apigee11
     apigee_cassandra_password: Apigee11
     # Path to the license file on the Ansible control host.
-    apigee_license_path: license.txt
+    apigee_license_path: file://roles/apigee-edge/files/license.txt
     # Leave blank to disable mail.
     apigee_smtp_host:
     apigee_smtp_mail_from: noreply@apigee.com
