@@ -54,8 +54,7 @@
     apigee_virtual_host_port: 9001
     # Add as many aliases as needed.
     apigee_virtual_host_aliases:
-      - dev-cma.tcs.com
-      - dev1-cma.tcs.com
+      
 
     # apigee-dev-portal
     #apigee_dp_admin_firstname: Apigee
