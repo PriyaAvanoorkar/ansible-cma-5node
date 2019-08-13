@@ -25,8 +25,8 @@
     # apigee-base
     apigee_installation_path: /opt
     # Google-hosted Internet repo
-    apigee_repository_username: tcs
-    apigee_repository_password: wedjpOIS7$##*
+    apigee_repository_username: 
+    apigee_repository_password:
     # Locally-hosted repo mirror
     #apigee_repository_protocol: http://
     #apigee_repository_address: mirror-address
