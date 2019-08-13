@@ -43,7 +43,7 @@
     #apigee_postgresql_password: Apigee11
     apigee_cassandra_password: Apigee11
     # Path to the license file on the Ansible control host.
-    apigee_license_path: file://roles/apigee-edge/files/license.txt
+    apigee_license_path: ~/ansible-cma-5node/license.txt
     # Leave blank to disable mail.
     apigee_smtp_host:
     apigee_smtp_mail_from: noreply@apigee.com
@@ -54,8 +54,8 @@
     apigee_virtual_host_port: 9001
     # Add as many aliases as needed.
     apigee_virtual_host_aliases:
-      - SET_ME_1
-      - SET_ME_2
+      - dev-cma.tcs.com
+      - dev1-cma.tcs.com
 
     # apigee-dev-portal
     #apigee_dp_admin_firstname: Apigee
