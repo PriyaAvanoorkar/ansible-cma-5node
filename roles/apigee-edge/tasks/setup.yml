@@ -11,7 +11,7 @@
   when: ('ld' in apigee.profiles)
 
 - name: Setup Management servers
-  shell: {{ apigee_setup_path }} -f {{ apigee_edge_response_path }} -p ms
+  shell: ' {{ apigee_setup_path }} -f {{ apigee_edge_response_path }} -p ms'
   when: ('ms' in apigee.profiles)
 
 # For clustered installations.
