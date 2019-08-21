@@ -12,9 +12,8 @@ apigee_environment_name: dev
 apigee_virtual_host_name: default
 apigee_virtual_host_port: 9001
 apigee_virtual_host_aliases:
-  - SET_ME_1
-  - SET_ME_2
-  - SET_ME_3
+  - dev_cma.tcs.com
+  - cma-apigee.tcs.com
 apigee_organization_admin_email: '{{ apigee_admin_email }}'
 apigee_organization_admin_password: '{{ apigee_admin_password }}'
 
