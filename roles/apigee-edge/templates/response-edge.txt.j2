@@ -21,6 +21,16 @@ ZK_HOSTS="$IP1 $IP2 $IP3"
 ZK_CLIENT_HOSTS="$IP1 $IP2 $IP3"
 # Must use IP addresses for CASS_HOSTS, not DNS names.
 CASS_HOSTS="$IP1:1,1 $IP2:1,1 $IP3:1,1"
+USE_CASS_CLUSTER="y"
+
+USE_CASS_CLUSTERNAME="{{ apigee_cassandra_cluster_name }}"
+CASS_AUTH="{{ 'y' if apigee_cassandra_authentication else 'n' }}"
+CASS_USERNAME="{{ apigee_cassandra_username }}"
+CASS_PASSWORD="{{ apigee_cassandra_password }}"
+
+
+
+
 # Default is postgres
 PG_PWD=postgres
 PG_MASTER=$IP4
