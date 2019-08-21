@@ -19,10 +19,10 @@
     tags:
       - java
 
-  #- import_role:
-    #  name: apigee-tmp-dir
-    #tags:
-     # - bootstrap
+  - import_role:
+      name: apigee-tmp-dir
+    tags:
+      - bootstrap
 
   - import_tasks: bootstrap.yml
     tags:
