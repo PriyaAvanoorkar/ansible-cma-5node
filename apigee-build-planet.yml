@@ -4,13 +4,13 @@
   roles:
     - apigee-bootstrap
     - apigee-base
-    - apigee-edge
-    - apigee-tls-ms
-    - apigee-tls-ui
-    - apigee-tls-mp
-    - apigee-organization
-    - apigee-dev-portal
-    - apigee-validate
+    #- apigee-edge
+    #- apigee-tls-ms
+    #- apigee-tls-ui
+    #- apigee-tls-mp
+    #- apigee-organization
+    #- apigee-dev-portal
+    #- apigee-validate
   vars:
     apigee_topology:
       - dc-1 172.31.38.248 ds,ms
