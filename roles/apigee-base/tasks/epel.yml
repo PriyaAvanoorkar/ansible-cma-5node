@@ -15,5 +15,5 @@
   yum:
     name : repolist
     state: present
-  debug:
+- debug:
      msg: " cheked repolist is present repolist"
