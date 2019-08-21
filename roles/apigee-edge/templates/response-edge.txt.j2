@@ -4,7 +4,7 @@ MSIP="{{ apigee.msip }}"
 ADMIN_EMAIL="{{ apigee_admin_email }}"
 APIGEE_ADMINPW="{{ apigee_admin_password }}"
 LICENSE_FILE="{{ apigee_tmp_dir }}/license.txt"
-ENABLE_SYSTEM_CHECK=n
+
 {% if apigee.ldap_remote is defined %}
 USE_LDAP_REMOTE_HOST="{{ 'y' if apigee.ldap_remote else 'n' }}"
 {% if apigee.ldap_remote %}

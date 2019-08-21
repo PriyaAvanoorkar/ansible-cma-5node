@@ -13,11 +13,11 @@
     - apigee-validate
   vars:
     apigee_topology:
-      - dc-1 10.166.0.3 ds,ms
-      - dc-1 10.166.0.5 ds,rmp
-      - dc-1 10.166.0.6 ds,rmp
-      - dc-1 10.166.0.2 sax 
-      - dc-1 10.166.0.7 sax
+      - dc-1 172.31.38.248 ds,ms
+      - dc-1 172.31.39.234 ds,rmp
+      - dc-1 172.31.43.108 ds,rmp
+      - dc-1 172.31.36.97 sax 
+      - dc-1 172.31.37.27 sax
 
     # Set this to false to retain installation files in the temporary directory
     # (default: /tmp/apigee).
