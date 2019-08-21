@@ -11,9 +11,3 @@
     state: present
   when: ansible_distribution == 'CentOS'
   
-- name : Check Epel repo avilable 
-  yum:
-    name : repolist
-    state: present
-- debug:
-     msg: " cheked repolist is present repolist"
