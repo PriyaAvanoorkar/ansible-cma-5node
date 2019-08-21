@@ -1,67 +1,36 @@
-HOSTIP="{{ ansible_default_ipv4.address }}"
+IP1="172.31.38.248"  
+IP2="172.31.39.234"
+IP3="172.31.43.108" 
+IP4="172.31.36.97"
+IP5="172.31.37.27"
 
-MSIP="{{ apigee.msip }}"
+HOSTIP=$(hostname -i)
+ENABLE_SYSTEM_CHECK=n
+
 ADMIN_EMAIL="{{ apigee_admin_email }}"
 APIGEE_ADMINPW="{{ apigee_admin_password }}"
+
 LICENSE_FILE="{{ apigee_tmp_dir }}/license.txt"
-
-{% if apigee.ldap_remote is defined %}
-USE_LDAP_REMOTE_HOST="{{ 'y' if apigee.ldap_remote else 'n' }}"
-{% if apigee.ldap_remote %}
-LDAP_HOST="{{ apigee.ldap_host }}"
-{% endif %}
-{% endif %}
-
-{% if apigee.ldap_type is defined %}
-LDAP_TYPE="{{ apigee.ldap_type }}"
-{% if apigee.ldap_type == '2' %}
-LDAP_SID="{{ apigee.ldap_sid }}"
-LDAP_PEER="{{ apigee.ldap_peer }}"
-{% endif %}
+MSIP=$IP1
+USE_LDAP_REMOTE_HOST=n
+LDAP_TYPE=1
 APIGEE_LDAPPW="{{ apigee_ldap_password }}"
-{% endif %}
-
-ENABLE_AX="y"
-
-MP_POD="{{ apigee.mp_pod }}"
-REGION="{{ apigee.region }}"
-
-USE_ZK_CLUSTER="y"
-ZK_HOSTS="{{ apigee.zk_hosts }}"
-ZK_CLIENT_HOSTS="{{ apigee.zk_client_hosts }}"
-
-USE_CASS_CLUSTER="y"
-CASS_HOSTS="{{ apigee.cass_hosts }}"
-USE_CASS_CLUSTERNAME="{{ apigee_cassandra_cluster_name }}"
-CASS_AUTH="{{ 'y' if apigee_cassandra_authentication else 'n' }}"
-CASS_USERNAME="{{ apigee_cassandra_username }}"
-CASS_PASSWORD="{{ apigee_cassandra_password }}"
-
-PG_PWD="{{ apigee_postgresql_password }}"
-{% if ansible_default_ipv4.address == apigee.pg_master and apigee.pg_standby %}
-PG_MASTER="{{ apigee.pg_master }}"
-PG_STANDBY="{{ apigee.pg_standby[0] }}"
-{% elif ansible_default_ipv4.address in apigee.pg_standby %}
-PG_MASTER="{{ apigee.pg_master }}"
-PG_STANDBY="{{ ansible_default_ipv4.address }}"
-{% endif %}
-
-SKIP_SMTP="{{ 'n' if apigee_smtp_host else 'y' }}"
-{% if apigee_smtp_host %}
-SMTPHOST="{{ apigee_smtp_host }}"
-SMTPPORT="{{ apigee_smtp_port }}"
-{% if apigee_smtp_user %}
-SMTPUSER="{{ apigee_smtp_user }}"
-{% if apigee_smtp_password %}
-SMTPPASSWORD="{{ apigee_smtp_password }}"
-{% endif %}
-{% endif %}
-SMTPSSL="{{ 'y' if apigee_smtp_ssl|bool else 'n' }}"
-{% endif %}
-SMTPMAILFROM="{{ apigee_smtp_mail_from }}"
-
-BIND_ON_ALL_INTERFACES="{{ 'y' if apigee_bind_all_interfaces|bool else 'n' }}"
-
-{% if apigee_brand == 'sap' %}
-BRAND="sap"
-{% endif %}
+MP_POD=gateway
+REGION=dc-1
+ZK_HOSTS="$IP1 $IP2 $IP3"
+ZK_CLIENT_HOSTS="$IP1 $IP2 $IP3"
+# Must use IP addresses for CASS_HOSTS, not DNS names.
+CASS_HOSTS="$IP1:1,1 $IP2:1,1 $IP3:1,1"
+# Default is postgres
+PG_PWD=postgres
+PG_MASTER=$IP4
+PG_STANDBY=$IP5
+SKIP_SMTP=n
+SMTPHOST=smtp.example.com
+SMTPUSER=smtp@example.com
+# omit for no username
+SMTPPASSWORD=SMTP_PASSWORD
+# omit for no password
+SMTPSSL=n
+SMTPPORT=25
+SMTPMAILFROM="My Company <myco@company.com>"
