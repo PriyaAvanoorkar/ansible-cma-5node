@@ -24,8 +24,8 @@ apigee_repository_address: software.apigee.com
 apigee_repository_base_path: /
 apigee_repository_stage: release
 # If these are empty the bootstrap will hang at a prompt.
-apigee_repository_username: SET_ME
-apigee_repository_password: SET_ME
+apigee_repository_username: tcs
+apigee_repository_password: wedjpOIS7$##*
 apigee_repository_url: '{{ apigee_repository_protocol }}{{ apigee_repository_address }}{{ apigee_repository_base_path.rstrip("/") }}/'
 apigee_bootstrap_url: '{{ apigee_repository_url }}bootstrap_{{ apigee_release }}.sh'
 apigee_bootstrap_path: '{{ apigee_tmp_dir }}/bootstrap_{{ apigee_release }}.sh'

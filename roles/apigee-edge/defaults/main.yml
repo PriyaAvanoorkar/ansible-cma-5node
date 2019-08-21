@@ -1,25 +1,10 @@
 ---
 apigee_topology:
-  - dc-1 host01 ms
-  - dc-1 host02 ds
-  - dc-1 host03 ds
-  - dc-1 host04 ds
-  - dc-1 host05 rmp
-  - dc-1 host06 rmp
-  - dc-1 host07 qs
-  - dc-1 host08 qs
-  - dc-1 host09 ps
-  - dc-1 host10 pdb,dp
-  - dc-2 host11 ms
-  - dc-2 host12 ds
-  - dc-2 host13 ds
-  - dc-2 host14 ds
-  - dc-2 host15 rmp
-  - dc-2 host16 rmp
-  - dc-2 host17 qs
-  - dc-2 host18 qs
-  - dc-2 host19 ps
-  - dc-2 host20 pdb,dp
+  - dc-1 10.166.0.3 ds,ms
+  - dc-1 10.166.0.5 ds,rmp
+  - dc-1 10.166.0.6 ds,rmp
+  - dc-1 10.166.0.2 sax 
+  - dc-1 10.166.0.7 sax
 
 apigee_tmp_dir: /tmp/apigee
 apigee_clean_up: true
@@ -31,8 +16,7 @@ apigee_nginx_installation_path: '{{ apigee_installation_path }}/nginx'
 
 apigee_cluster_hostname: '{{ inventory_hostname }}'
 
-apigee_license_path: SET_ME
-
+apigee_license_path: /root/license.txt
 apigee_admin_email: opdk@apigee.com
 apigee_admin_password: Apigee11
 

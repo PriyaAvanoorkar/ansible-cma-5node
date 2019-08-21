@@ -15,7 +15,9 @@
 
   - name: Bootstrap from {{ apigee_repository_url }}
     command: /bin/bash {{ apigee_bootstrap_path }} apigeeprotocol={{ apigee_repository_protocol }} apigeerepohost={{ apigee_repository_address }} apigeerepobasepath={{ apigee_repository_base_path }} apigeestage={{ apigee_repository_stage }} apigeeuser={{ apigee_repository_username }} apigeepassword={{ apigee_repository_password }}
-
+  - debug:
+     msg:
+        - " /bin/bash {{ apigee_bootstrap_path }} apigeeprotocol={{ apigee_repository_protocol }} apigeerepohost={{ apigee_repository_address }} apigeerepobasepath={{ apigee_repository_base_path }} apigeestage={{ apigee_repository_stage }} apigeeuser={{ apigee_repository_username }} apigeepassword={{ apigee_repository_password }} "
   when: apigee_repository_protocol != 'file://'
 
 
@@ -29,9 +31,7 @@
     command: /bin/bash {{ apigee_bootstrap_path }} apigeeprotocol={{ apigee_repository_protocol }} apigeerepohost={{ apigee_repository_address }} apigeerepobasepath={{ apigee_repository_base_path }} apigeestage={{ apigee_repository_stage }} apigeeuser={{ apigee_repository_username }} apigeepassword={{ apigee_repository_password }}
 
   when: apigee_repository_protocol == 'file://'
-  - debug:
-     msg:
-        - " /bin/bash {{ apigee_bootstrap_path }} apigeeprotocol={{ apigee_repository_protocol }} apigeerepohost={{ apigee_repository_address }} apigeerepobasepath={{ apigee_repository_base_path }} apigeestage={{ apigee_repository_stage }} apigeeuser={{ apigee_repository_username }} apigeepassword={{ apigee_repository_password }} "
+
 
 
 - name: Install Apigee setup
